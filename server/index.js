@@ -11,21 +11,7 @@ const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const app = express();
 app.use(express.json({extended: true}))
 app.use(express.urlencoded({extended: true}))
-app.use(cors(
-  {
-    origin: ["https://blog-mern-frontend-plum.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-))
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://blog-mern-frontend-plum.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
-
+app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(upload())
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
