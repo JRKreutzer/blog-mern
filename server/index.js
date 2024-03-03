@@ -13,7 +13,7 @@ app.use(express.json({extended: true}))
 app.use(express.urlencoded({extended: true}))
 app.use(cors(
   {
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["https://blog-mern-frontend-plum.vercel.app"],
     methods: ["POST", "GET"],
     credencials: true
   }
