@@ -15,7 +15,7 @@ app.use(cors(
   {
     origin: ["https://blog-mern-frontend-plum.vercel.app"],
     methods: ["POST", "GET"],
-    credencials: true
+    credentials: true
   }
 ))
 app.use(upload())
