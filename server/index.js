@@ -18,6 +18,14 @@ app.use(cors(
     credentials: true
   }
 ))
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://blog-mern-frontend-plum.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(upload())
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
